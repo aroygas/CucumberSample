@@ -1,5 +1,4 @@
 source "http://rubygems.org"
 gem "cucumber"
-gem "headless"
 gem "selenium-webdriver"
 gem "rspec"
