@@ -12,6 +12,9 @@ class HomePage < GenericPage
   #Shopping cart button in the page header
   link(:cart, :class => 'b-top-navigation-cart__link')
 
+  #Product title in header
+  h1(:product_head_title, :class => 'catalog-masthead__title')
+
   #A product title in search results table is a link inside iframe
   in_iframe(:index => 1) do |frame|
     link(:product_title, :class => 'product__title-link', :frame => frame)

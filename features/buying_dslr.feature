@@ -7,11 +7,9 @@ Feature: Buy something in online shop
   @javascript
   Scenario: Buy Canon EOS 1300D in online shop
     Given I am on the home page
-    When I search for "Canon EOS 1300D Body"
-    Then I should see "Canon EOS 1300D Body" product in search results
-    When I follow to "Canon EOS 1300D Body"
-    Then I should see "Фотоаппарат Canon EOS 1300D Body" text
-    And should see that parameters have values:
+    When I find "Canon EOS 1300D Body" product
+    And I open "Canon EOS 1300D Body" product
+    Then should see that parameters have values:
     |Parameter                |Value            |
     |Размер экрана            | 3 ''            |
     |Количество точек матрицы |18 Мп            |
