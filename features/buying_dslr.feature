@@ -5,8 +5,8 @@ Feature: Buy something in online shop
 
   @smoke
   @javascript
-  Scenario: Buy Canon EOS 1300D on onliner.by
-    Given I am logged in to "http:/www.onliner.by"
+  Scenario: Buy Canon EOS 1300D in online shop
+    Given I am on the home page
     When I search for "Canon EOS 1300D Body"
     Then I should see "Canon EOS 1300D Body" product in search results
     When I follow to "Canon EOS 1300D Body"
