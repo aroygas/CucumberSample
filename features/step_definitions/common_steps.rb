@@ -25,7 +25,9 @@ Then(/^(?:|I )should see "([^"]*)" product in search results(?:| in (-?\d+) seco
   else
     local_timeout = seconds
   end
+  @current_page.switch_to_search_iframe
   expect(@current_page.product_title_element.when_present(local_timeout).text).to eq text
+  @current_page.switch_to_homepage
 end
 
 When(/^(?:|I )find "([^"]*)" product$/) do |query|
@@ -33,9 +35,11 @@ When(/^(?:|I )find "([^"]*)" product$/) do |query|
   step %{I should see "#{query}" product in search results}
 end
 
-When(/^(?:|I )open "([^"]*)" product$/) do |query|
-  step %{I follow to "#{query}"}
-  expect(@current_page.product_head_title_element.when_present(timeout).text).to include query
+When(/^(?:|I )open "([^"]*)" product$/) do |product_name|
+  @current_page.switch_to_search_iframe
+  @current_page.open_product_with_title(product_name)
+  @current_page.switch_to_homepage
+  expect(@current_page.product_head_title_element.when_present(timeout).text).to include product_name
 end
 
 Then(/^(?:|I )should see that "([^"]*)" parameter has "([^"]*)" value$/) do |parameter, value|
