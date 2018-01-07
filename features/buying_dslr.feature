@@ -1,5 +1,5 @@
 Feature: Buy something in online shop
-  In order to buy some stuff online
+  In order to buy something online
   As a user
   I need be able to go to online shop, search for some product and add it to a shopping cart
 
@@ -11,9 +11,11 @@ Feature: Buy something in online shop
     Then I should see "Canon EOS 1300D Body" product in search results
     When I follow to "Canon EOS 1300D Body"
     Then I should see "Фотоаппарат Canon EOS 1300D Body" text
-    And should see that "Размер экрана" parameter has "3 ''" value
-    And should see that "Количество точек матрицы" parameter has "18 Мп" value
-    And should see that "Физический размер матрицы" parameter has "APS-C (1.6 crop)" value
+    And should see that parameters have values:
+    |Parameter                |Value            |
+    |Размер экрана            | 3 ''            |
+    |Количество точек матрицы |18 Мп            |
+    |Физический размер матрицы| APS-C (1.6 crop)|
     When I add product to cart
     And I open shopping cart
     Then I should see "Canon EOS 1300D Body" in cart

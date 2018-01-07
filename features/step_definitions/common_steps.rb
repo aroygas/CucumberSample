@@ -25,6 +25,13 @@ Then(/^(?:|I )should see that "([^"]*)" parameter has "([^"]*)" value$/) do |par
   expect(@current_page.parameter_element(parameter).text).to eq(value)
 end
 
+Then(/^(?:|I )should see that parameters have values:$/) do |table|
+  data = table.hashes
+  data.each do |row|
+    step "should see that \"#{row['Parameter']}\" parameter has \"#{row['Value']}\" value"
+  end
+end
+
 When(/^I add product to cart$/) do
   step 'I follow to "В корзину"'
 end
