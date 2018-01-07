@@ -12,4 +12,4 @@ An exercise of UI testing automation using Ruby and Cucumber.
 
 3. Run tests:
 
-`bundle exec cucumber`
+`bundle exec cucumber --format html -o results.html`

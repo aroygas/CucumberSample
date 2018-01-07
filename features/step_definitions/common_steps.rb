@@ -1,6 +1,4 @@
-require 'selenium-webdriver'
-require 'page-object'
-
+#Timout for waiting of search results
 timeout = 10
 
 Given(/^(?:|I )am on the home page$/) do
