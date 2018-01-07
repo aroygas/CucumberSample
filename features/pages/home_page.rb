@@ -1,5 +1,5 @@
 #
-# Home page is the only one actual Page used in this small exercise
+# Home page is the only one actual Page used in this small exercise.
 #
 class HomePage < GenericPage
 

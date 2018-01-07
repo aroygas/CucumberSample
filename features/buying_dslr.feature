@@ -18,15 +18,18 @@ Feature: Buy something in online shop
     And I open shopping cart
     Then I should see "Canon EOS 1300D Body" in cart
 
-
-  #Following scenarios are here just to show that any parametrized step can fail with wrong values (You can checkout screenshots in reports)
+  #############################################################################################################################################
+  #                                                                                                                                           #
+  # Following scenarios are here just to show that any parametrized step can fail with wrong values (You can checkout screenshots in reports) #
+  #                                                                                                                                           #
+  #############################################################################################################################################
 
   @debug
   @javascript
   Scenario: Search for something else
     Given I am on the home page
     When I search for "Something strange"
-    Then I should see "Canon EOS 1300D Body" product in search results
+    Then I should see "Canon EOS 1300D Body" product in search results in 10 seconds
 
   @debug
   @javascript
@@ -50,7 +53,7 @@ Feature: Buy something in online shop
     When I search for "Canon EOS 1300D Body"
     Then I should see "Canon EOS 1300D Body" product in search results
     When I follow to "Canon EOS 1300D Body"
-    Then I should see "Lorem Ipsum" text
+    Then I should see text "Lorem Ipsum"
 
   @debug
   @javascript
@@ -59,7 +62,7 @@ Feature: Buy something in online shop
     When I search for "Canon EOS 1300D Body"
     Then I should see "Canon EOS 1300D Body" product in search results
     When I follow to "Canon EOS 1300D Body"
-    Then I should see "Фотоаппарат Canon EOS 1300D Body" text
+    Then I should see text "Фотоаппарат Canon EOS 1300D Body"
     And should see that "Размер экрана" parameter has "55 ''" value
 
   @debug
@@ -69,7 +72,7 @@ Feature: Buy something in online shop
     When I search for "Canon EOS 1300D Body"
     Then I should see "Canon EOS 1300D Body" product in search results
     When I follow to "Canon EOS 1300D Body"
-    Then I should see "Фотоаппарат Canon EOS 1300D Body" text
+    Then I should see text "Фотоаппарат Canon EOS 1300D Body"
     And should see that "Размер экрана" parameter has "3 ''" value
     And should see that "Количество точек матрицы" parameter has "18 Мп" value
     And should see that "Физический размер матрицы" parameter has "APS-C (1.6 crop)" value
