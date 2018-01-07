@@ -6,7 +6,7 @@ An exercise of UI testing automation using Ruby and Cucumber.
 
 `git clone https://github.com/aroygas/CucumberSample`
 
-## 2. Install dependencies:
+## ********2. Install dependencies:
 
 `bundle install`
 

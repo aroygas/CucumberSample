@@ -46,14 +46,14 @@ end
 
 #Cart steps
 
-When(/^(?:|I ) add product to cart$/) do
+When(/^(?:|I )add product to cart$/) do
   step %{I follow to "В корзину"}
 end
 
-And(/^(?:|I ) open shopping cart$/) do
+And(/^(?:|I )open shopping cart$/) do
   @current_page.cart
 end
 
-Then(/^(?:|I ) should see "([^"]*)" in cart$/) do |product_name|
+Then(/^(?:|I )should see "([^"]*)" in cart$/) do |product_name|
   @current_page.product_is_in_cart(product_name)
 end
