@@ -19,13 +19,18 @@ When(/^(?:|I )search for "([^"]*)"$/) do |query|
   @current_page.search_for query
 end
 
-Then(/^(?:|I )should see "([^"]*)" product in search results(?:| in [\d]* seconds)$/) do |text, seconds|
-  expect(@current_page.product_title_element.when_present(seconds).text).to eq text
+Then(/^(?:|I )should see "([^"]*)" product in search results(?:| in (-?\d+) second(?:|s))$/) do |text, seconds|
+  if seconds.zero?
+    local_timeout = timeout
+  else
+    local_timeout = seconds
+  end
+  expect(@current_page.product_title_element.when_present(local_timeout).text).to eq text
 end
 
 When(/^(?:|I )find "([^"]*)" product$/) do |query|
   step %{I search for "#{query}"}
-  step %{I should see "#{query}" product in search results in #{timeout} seconds}
+  step %{I should see "#{query}" product in search results}
 end
 
 When(/^(?:|I )open "([^"]*)" product$/) do |query|

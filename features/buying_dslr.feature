@@ -29,7 +29,14 @@ Feature: Buy something in online shop
   Scenario: Search for something else
     Given I am on the home page
     When I search for "Something strange"
-    Then I should see "Canon EOS 1300D Body" product in search results in 10 seconds
+    Then I should see "Canon EOS 1300D Body" product in search results in 5 seconds
+
+  @debug
+  @javascript
+  Scenario: Have chance to get timeout
+    Given I am on the home page
+    When I search for "Canon EOS 1300D Body"
+    Then I should see "Canon EOS 1300D Body" product in search results in 1 second
 
   @debug
   @javascript
