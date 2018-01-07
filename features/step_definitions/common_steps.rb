@@ -1,4 +1,4 @@
-#Timout for waiting of search results
+#Timeout for waiting of search results
 timeout = 10
 
 Given(/^(?:|I )am on the home page$/) do

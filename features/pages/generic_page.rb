@@ -1,5 +1,5 @@
 #
-# A top level class that is a parent for other Page classes.
+# A top level Page that is a parent for other Pages.
 # It should implement basic methods that can be useful on any page.
 #
 class GenericPage
@@ -30,7 +30,7 @@ class GenericPage
   # @return [Element]
   #
   def find_custom_element(xpath, timeout = 10)
-    wait = Selenium::WebDriver::Wait.new(:timeout => timeout, :message => "\n\nERROR! Element with xapth: '#{xpath}' was not found after #{timeout} seconds of waiting!\n\n")
+    wait = Selenium::WebDriver::Wait.new(:timeout => timeout, :message => "\n\nERROR! Element with xpath: '#{xpath}' was not found after #{timeout} seconds of waiting!\n\n")
     custom_element = HomePage::Elements
     wait.until {
       custom_element = find_element(:xpath, xpath)
