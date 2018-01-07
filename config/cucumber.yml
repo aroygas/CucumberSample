@@ -1,0 +1,2 @@
+default: -r features --tags @smoke --color --format pretty --format html -o results.html
+debug: -r features --tags @debug --color --format pretty --format html -o results.html
