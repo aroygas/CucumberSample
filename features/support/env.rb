@@ -5,4 +5,4 @@ World(PageObject::PageFactory)
 
 #Place for settings like test_data.yml
 TEST_DATA_DIR = "./features/support/test_data"
-WAITING_TIMEOUT = 5
+WAITING_TIMEOUT = 10

@@ -7,7 +7,7 @@ Then(/^(?:|I )should see text "([^"]*)"$/) do |text|
 end
 
 When(/^(?:|I )follow to "([^"]*)"$/) do |link_text|
-  @current_page.follow_link_with_text(link_text)
+  @current_page.link_with_text(link_text).click
 end
 
 #Search steps
@@ -53,6 +53,7 @@ end
 #Cart steps
 
 When(/^(?:|I )add product to cart$/) do
+  @current_page.cart_element.when_present(WAITING_TIMEOUT)
   step %{I follow to "В корзину"}
 end
 

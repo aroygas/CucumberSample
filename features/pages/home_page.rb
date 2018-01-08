@@ -31,8 +31,8 @@ class HomePage < GenericPage
   #
   # @param [String] link_text
   #
-  def follow_link_with_text(link_text)
-    self.find_custom_element("//a[contains(., '#{link_text}')]").click
+  def link_with_text(link_text)
+    self.find_custom_element("//a[contains(., '#{link_text}')]")
   end
 
   #

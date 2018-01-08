@@ -1,5 +1,5 @@
 Before '@javascript' do
-  @browser = Selenium::WebDriver.for :chrome
+  @browser = Selenium::WebDriver.for :firefox
   @browser.manage.window.maximize
 end
 
