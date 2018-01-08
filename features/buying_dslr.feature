@@ -10,10 +10,10 @@ Feature: Buy something in online shop
     When I find "Canon EOS 1300D Body" product
     And open "Canon EOS 1300D Body" product
     Then I should see that parameters have values:
-    |Parameter                |Value            |
-    |Размер экрана            | 3 ''            |
-    |Количество точек матрицы |18 Мп            |
-    |Физический размер матрицы| APS-C (1.6 crop)|
+    |Parameter                |Value           |
+    |Размер экрана            |3 ''            |
+    |Количество точек матрицы |18 Мп           |
+    |Физический размер матрицы|APS-C (1.6 crop)|
     When I add product to cart
     And open shopping cart
     Then I should see "Canon EOS 1300D Body" in cart
