@@ -34,7 +34,7 @@ An html report called **results.html** should be generated in root of the projec
  # Note 
  
  You also need to have preferred browser installed. 
- And you should have webdriver for that browser put in your <Ruby root>/bin directory. 
+ And you should have webdriver for that browser put in your **Ruby_workspace_root_folder**/bin directory. 
  Web drivers can be found here _http://www.seleniumhq.org/download/_
  
  Browser can be changed in command line through passing **BROWSER** environment parameter like this:
