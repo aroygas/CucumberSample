@@ -40,7 +40,7 @@ When(/^(?:|I )open "([^"]*)" product$/) do |product_name|
 end
 
 Then(/^(?:|I )should see that "([^"]*)" parameter has "([^"]*)" value$/) do |parameter, value|
-  expect(@current_page.parameter_element(parameter).text).to eq(value)
+  expect(@current_page.parameter_element(parameter).text.strip).to eq value.strip
 end
 
 Then(/^(?:|I )should see that parameters have values:$/) do |table|

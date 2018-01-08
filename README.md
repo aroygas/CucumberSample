@@ -2,6 +2,7 @@
 An exercise of UI testing automation using Ruby and Cucumber.
 
 # Instructions to use
+
 ## 1. Checkout project: 
 
 `git clone https://github.com/aroygas/CucumberSample`
@@ -27,4 +28,13 @@ In project workspace run
 
 ## 4. HTML report:
 
-An html report called **results.html** should be generated in root of the project if tests are ran with default or debug pofiles, or `--format html -o results.html` is added to runner options.
+An html report called **results.html** should be generated in root of the project
+ if tests are ran with default or debug pofiles, or `--format html -o results.html` is added to runner options.
+ 
+ # Note 
+ 
+ You also need to have preferred browser installed and webdriver for that driver put in ruby/bin directory (chrome is default).
+ Web drivers can be found here http://www.seleniumhq.org/download/
+ 
+ This smokes tests were successfully ran on **Chrome** and **Firefox**.
+ **Microsoft Edge** has issues with getting values from fields and finding elements and is not recommended)

@@ -1,5 +1,18 @@
+case ENV['BROWSER']
+  when 'chrome'
+    browser = Selenium::WebDriver.for :chrome
+  when 'firefox', 'ff'
+    browser =Selenium::WebDriver.for :ff
+  when 'edge'
+    browser = Selenium::WebDriver.for :edge
+  when 'opera'
+    browser = Selenium::WebDriver.for :opera
+  else
+    browser = Selenium::WebDriver.for :chrome
+end
+
 Before '@javascript' do
-  @browser = Selenium::WebDriver.for :firefox
+  @browser = browser
   @browser.manage.window.maximize
 end
 
