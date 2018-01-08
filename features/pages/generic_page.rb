@@ -13,7 +13,7 @@ class GenericPage
   # @param [String] text
   # @param [Integer] timeout
   #
-  def text_is_on_page(text, timeout = 10)
+  def text_is_on_page(text, timeout = WAITING_TIMEOUT)
     self.wait_until(timeout, "\n\nERROR! Text '#{text}' was not found after #{timeout} seconds of waiting!\n") do
       self.text.include? text
     end
@@ -29,7 +29,7 @@ class GenericPage
   #
   # @return [Element]
   #
-  def find_custom_element(xpath, timeout = 10)
+  def find_custom_element(xpath, timeout = WAITING_TIMEOUT)
     wait = Selenium::WebDriver::Wait.new(:timeout => timeout, :message => "\n\nERROR! Element with xpath: '#{xpath}' was not found after #{timeout} seconds of waiting!\n\n")
     custom_element = HomePage::Elements
     wait.until {

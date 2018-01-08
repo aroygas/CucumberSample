@@ -1,6 +1,3 @@
-#Timeout for waiting of search results
-timeout = 10
-
 Given(/^(?:|I )am on the home page$/) do
   visit_page HomePage
 end
@@ -21,7 +18,7 @@ end
 
 Then(/^(?:|I )should see "([^"]*)" product in search results(?:| in (-?\d+) second(?:|s))$/) do |text, seconds|
   if seconds.zero?
-    local_timeout = timeout
+    local_timeout = WAITING_TIMEOUT
   else
     local_timeout = seconds
   end
@@ -39,7 +36,7 @@ When(/^(?:|I )open "([^"]*)" product$/) do |product_name|
   @current_page.switch_to_search_iframe
   @current_page.open_product_with_title(product_name)
   @current_page.switch_to_homepage
-  expect(@current_page.product_head_title_element.when_present(timeout).text).to include product_name
+  expect(@current_page.product_head_title_element.when_present(WAITING_TIMEOUT).text).to include product_name
 end
 
 Then(/^(?:|I )should see that "([^"]*)" parameter has "([^"]*)" value$/) do |parameter, value|
