@@ -33,8 +33,15 @@ An html report called **results.html** should be generated in root of the projec
  
  # Note 
  
- You also need to have preferred browser installed and webdriver for that driver put in ruby/bin directory (chrome is default).
- Web drivers can be found here http://www.seleniumhq.org/download/
+ You also need to have preferred browser installed. 
+ And you should have webdriver for that browser put in your <Ruby root>/bin directory. 
+ Web drivers can be found here _http://www.seleniumhq.org/download/_
  
- This smokes tests were successfully ran on **Chrome** and **Firefox**.
+ Browser can be changed in command line through passing **BROWSER** environment parameter like this:
+ 
+ `bundle exec cucumber BROWSER=firefox` 
+ 
+ If no browser is specified **Chrome** will be used by default.
+   
+ This smoke tests were successfully ran on **Chrome** and **Firefox**.
  **Microsoft Edge** has issues with getting values from fields and finding elements and is not recommended)
