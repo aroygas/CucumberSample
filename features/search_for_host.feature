@@ -11,7 +11,6 @@ Feature: Search for host
     Then I should see text "Explore San Francisco"
 
 #Negative search
-  @smoke
   @javascript
   @debug
   Scenario: Just try to fail in order to show a pretty screenshot in test report
