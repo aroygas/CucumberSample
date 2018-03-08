@@ -13,6 +13,7 @@ Feature: Search for host
 #Negative search
   @smoke
   @javascript
+  @debug
   Scenario: Just try to fail in order to show a pretty screenshot in test report
     Given I am on the home page
     When I search for "New York"
